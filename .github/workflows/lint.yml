@@ -2,6 +2,10 @@ name: Linting all code
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: read
+
 jobs:
   lint-prettier:
     name: Lint-prettier
