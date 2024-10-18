@@ -10,7 +10,6 @@ jobs:
       - name: npm install
         run: npm install
       - name: stylelint
-        uses: actions/checkout@v4
         run: npm run lint:prettier
   lint-styles:
     name: Lint-styles
@@ -19,7 +18,6 @@ jobs:
       - name: npm install
         run: npm install
       - name: stylelint
-        uses: actions/checkout@v4
         run: npm run lint:styles
   lint-scripts:
     name: Lint-scripts
@@ -28,7 +26,6 @@ jobs:
       - name: npm install
         run: npm install
       - name: stylelint
-        uses: actions/checkout@v4
         run: npm run lint:scripts
   lint-knip:
     name: Lint-knip
@@ -36,6 +33,5 @@ jobs:
     steps:
       - name: npm install
         run: npm install
-      - name: stylelint
-        uses: actions/checkout@v4
+      - name: check-knip
         run: npm run lint:knip
