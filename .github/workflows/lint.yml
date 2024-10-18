@@ -11,6 +11,16 @@ jobs:
     name: Lint-prettier
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package.json')}}
+          restore-keys: node_modules-
       - name: npm install
         run: npm install
       - name: stylelint
@@ -19,6 +29,16 @@ jobs:
     name: Lint-styles
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package.json')}}
+          restore-keys: node_modules-
       - name: npm install
         run: npm install
       - name: stylelint
@@ -27,6 +47,16 @@ jobs:
     name: Lint-scripts
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package.json')}}
+          restore-keys: node_modules-
       - name: npm install
         run: npm install
       - name: stylelint
@@ -35,6 +65,16 @@ jobs:
     name: Lint-knip
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package.json')}}
+          restore-keys: node_modules-
       - name: npm install
         run: npm install
       - name: check-knip
