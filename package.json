@@ -4,7 +4,15 @@
   "description": "Эксперементальная попытка поиграться с electron и создать своё приложение",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:scripts": "eslint src/",
+    "lint:styles": "stylelint src/**/*.scss --aei",
+    "lint:knip": "knip --production",
+    "lint:prettier": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --check",
+    "lint:write": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --write",
+    "lint": "npm run type-check && npm run lint:styles && lint:scripts && npm run lint:prettier && npm run lint:knip",
+    "prettier:write": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --write",
+    "type-check": "tsc --skipLibCheck --noEmit -p .",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -18,5 +26,31 @@
   "bugs": {
     "url": "https://github.com/HappyFeedFriends/discord/issues"
   },
-  "homepage": "https://github.com/HappyFeedFriends/discord#readme"
+  "homepage": "https://github.com/HappyFeedFriends/discord#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typed-redux-saga": "^1.5.0"
+  },
+  "devDependencies": {
+    "@sima-land/linters": "^5.0.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "electron": "^33.0.1",
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "knip": "^5.33.3",
+    "prettier": "^3.3.3",
+    "stylelint": "^15.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
