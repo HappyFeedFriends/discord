@@ -1,0 +1,22 @@
+{
+  "name": "discord_by_me",
+  "version": "0.0.0",
+  "description": "Эксперементальная попытка поиграться с electron и создать своё приложение",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HappyFeedFriends/discord.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "HappyFeedFriends",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HappyFeedFriends/discord/issues"
+  },
+  "homepage": "https://github.com/HappyFeedFriends/discord#readme"
+}
