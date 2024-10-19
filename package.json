@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "description": "Эксперементальная попытка поиграться с electron и создать своё приложение",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "NODE_ENV=development vite serve --config src/client/vite.config.ts",
+    "dev:server": "NODE_ENV=development node  --no-warnings --loader ts-node/esm src/server/index.ts",
+    "build": "concurrently \"npm run build:client\" \"npm run build:server\"",
+    "build:client": "NODE_ENV=production vite build --config src/client/vite.config.ts",
+    "build:server": "NODE_ENV=production vite build --config src/server/vite.config.ts",
     "lint:scripts": "eslint src/",
     "lint:styles": "stylelint src/**/*.scss --aei",
     "lint:knip": "knip --production",
@@ -28,6 +35,8 @@
   },
   "homepage": "https://github.com/HappyFeedFriends/discord#readme",
   "dependencies": {
+    "@humanwhocodes/env": "^3.0.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -38,9 +47,12 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.13",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "concurrently": "^9.0.1",
     "electron": "^33.0.1",
     "eslint": "^9.12.0",
     "husky": "^9.1.6",
@@ -50,7 +62,7 @@
     "stylelint": "^15.11.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "vite": "^5.4.9",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
