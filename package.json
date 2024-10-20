@@ -20,7 +20,7 @@
     "lint:knip": "knip --production",
     "lint:prettier": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --check",
     "lint:write": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --write",
-    "lint": "npm run type-check && npm run lint:styles && lint:scripts && npm run lint:prettier && npm run lint:knip",
+    "lint": "npm run type-check && npm run lint:styles && npm run lint:scripts && npm run lint:prettier && npm run lint:knip",
     "prettier:write": "prettier \"src/**/*.{ts,tsx,js,jsx,scss}\" --write",
     "type-check": "tsc --skipLibCheck --noEmit -p .",
     "prepare": "husky"

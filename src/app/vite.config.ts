@@ -5,8 +5,8 @@ const config = defineConfig({
   publicDir: false,
   build: {
     outDir: resolve('./dist/app'),
-    ssr: './src/app/index.ts'
-  }
+    ssr: './src/app/index.ts',
+  },
 });
 
 export default config;
