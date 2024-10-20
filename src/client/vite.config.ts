@@ -26,6 +26,7 @@ const config = defineConfig({
     port: 3000,
     host: '0.0.0.0',
   },
+  base: './',
   build: {
     outDir: resolve('./dist/client'),
   },
