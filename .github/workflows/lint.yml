@@ -23,7 +23,7 @@ jobs:
           restore-keys: node_modules-
       - name: npm install
         run: npm install
-      - name: stylelint
+      - name: lint-prettier
         run: npm run lint:prettier
   lint-styles:
     name: Lint-styles
@@ -41,7 +41,7 @@ jobs:
           restore-keys: node_modules-
       - name: npm install
         run: npm install
-      - name: stylelint
+      - name: lint-styles
         run: npm run lint:styles
   lint-scripts:
     name: Lint-scripts
@@ -59,7 +59,7 @@ jobs:
           restore-keys: node_modules-
       - name: npm install
         run: npm install
-      - name: stylelint
+      - name: lint-scripts
         run: npm run lint:scripts
   lint-knip:
     name: Lint-knip
@@ -77,5 +77,5 @@ jobs:
           restore-keys: node_modules-
       - name: npm install
         run: npm install
-      - name: check-knip
+      - name: lint-knip
         run: npm run lint:knip
